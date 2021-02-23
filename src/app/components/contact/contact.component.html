@@ -1,0 +1,210 @@
+<div class="flex flex-1 justify-around p-6">
+  <img src="assets/logo.svg" width="120" height="120" alt="stera logo" />
+  <div class="text-sm font-semibold cursor-pointer" (click)="handleBackHome()">
+    < Back Home
+  </div>
+</div>
+
+<!-- query form -->
+<div
+  *ngIf="showQueryForm == 'true'"
+  class="flex flex-1 flex-col p-14 lg:p-6 lg:ml-80 mt-10"
+>
+  <div class="justify-start">
+    <span class="contact-link-inactive">Query </span
+    ><span class="mx-10 contact-link-inactive">/</span
+    ><span (click)="handleFAQsClick()" class="contact-link-active">FAQs </span>
+  </div>
+  <div class="contact-details mt-16">Call us: 8088954323</div>
+  <div class="contact-details my-3 mb-10">Email us: sales@steracare.com</div>
+  <div class="text-gray-400 text-xs">Let us know your requirement and</div>
+  <div class="text-gray-400 text-xs">we will get in touch with you.</div>
+
+  <div>
+    <form class="flex flex-col" [formGroup]="queryForm" (ngSubmit)="onSubmit()">
+      <input class="form-field" formControlName="name" placeholder="Name" />
+
+      <input
+        class="form-field"
+        formControlName="phone"
+        placeholder="Phone number"
+      />
+
+      <input class="form-field" formControlName="email" placeholder="Email" />
+      <div *ngIf="queryForm.controls.email.hasError('pattern')">
+        Oops, wrong pattern buddy!
+      </div>
+
+      <input class="form-field" formControlName="city" placeholder="City" />
+
+      <input
+        class="form-field query"
+        formControlName="query"
+        placeholder="Query"
+      />
+
+      <button
+        class="bg-blue-400 text-white w-20 h-10 p-2 rounded-lg text-sm mt-3"
+        type="submit"
+        [disabled]="queryForm.invalid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+  <div class="flex justify-center mt-20 contact-details">
+    Email us: stexxxjia@gmail.com
+  </div>
+</div>
+
+<!-- FAQs -->
+<div *ngIf="showFAQs == 'true'" class="flex flex-1 flex-col p-14 lg:p-6 lg:ml-80 mt-10">
+  <div class="justify-start">
+    <span class="contact-link-active" (click)="handleQueryClick()">Query </span
+    ><span class="mx-10 contact-link-active">/</span
+    ><span class="contact-link-inactive">FAQs </span>
+  </div>
+
+  <div class="flex flex-col mt-10">
+    <div class="my-5">
+      <div class="faq-question">What is UV-C technology ?</div>
+      <div class="faq-answer-header">
+        UV light has three wavelength categories: UV-A, UV-B, and UV-C.
+      </div>
+      <div class="faq-answer">
+        UV-C light is a short-wavelength, ultraviolet light that breaks apart
+        germ DNA, leaving it unable to function or reproduce. In other words,
+        UV-C light is germicidal (UV-A and UV-B light are not). UV-C can even
+        neutralize “superbugs” that have developed a resistance to antibiotics.
+      </div>
+    </div>
+
+    <div class="my-5">
+      <div class="faq-question">Why should we choose Stera?</div>
+      <div class="faq-answer-header">
+        We can list many reasons for you to choose Stera over other brands. A
+        few are here:
+      </div>
+      <div class="faq-answer">
+        a. You may have not heard about us before, but we have an
+        extraordinarily strong pedigree in pharmaceutical related research &
+        development for the last almost two decades.
+      </div>
+      <div class="faq-answer">
+        b. Stera UV Disinfection shield is the first device to have tested as
+        per BU guidelines in USFDA approved & NABL accredited laboratory
+      </div>
+      <div class="faq-answer">
+        c. Stera is the only brand in India with Proven Visible Evidence of
+        Virus Deactivation using UVC Dosimeters.
+      </div>
+      <div class="faq-answer">
+        d. Stera UV Disinfection Shield can kill 99.99% of all viruses. It is
+        certified by Intertek for 99.99% effectiveness in killing Pathogens.
+        Many other unique features which our competitors don’t have. Please look
+        at our unique features here.
+      </div>
+    </div>
+
+    <div class="my-5">
+      <div class="faq-question">
+        Does UV box kill bacteria? What all can UV shield kill?
+      </div>
+      <div class="faq-answer">
+        Not just bacteria, it can kill any kind of virus. Click here to look at
+        what all can be deactivated.
+      </div>
+    </div>
+
+    <div class="my-5">
+      <div class="faq-question">
+        Does UV C penetrate through the food items while sterilising?
+      </div>
+      <div class="faq-answer">
+        Stera UVC Disinfection Shield box uses UVC lamps & strategically
+        positioned reflectors that emit and reflect UVC radiation to kill all
+        viruses and pathogens that may have inadvertently attached itself to
+        these objects. There is essentially zero penetration of UV light into
+        any solid material.
+      </div>
+    </div>
+
+    <div class="my-5">
+      <div class="faq-question">
+        Can we UVC for direct disinfection of our hands?
+      </div>
+      <div class="faq-answer">
+        No. UVC is damaging to the skin and to the eyes. DO NOT look at the UV
+        light or expose any part of your body. UVC should not be, and is not
+        intended for, use for direct human disinfection.
+      </div>
+    </div>
+
+    <div class="my-5">
+      <div class="faq-question">
+        Is there a way we can test the efficacy of the shield?
+      </div>
+      <div class="faq-answer">
+        Yes. Stera is the only brand in India with Proven Visible Evidence of
+        Virus Deactivation using UVC Dosimeters.
+      </div>
+      <div class="faq-answer-header">
+        How to test the efficacy of the UV shield:
+      </div>
+      <div class="faq-answer">
+        Take two pink colour dosimeter strips and stick them on the top and
+        bottom of any object and place inside the cabinet for disinfection and
+        observe the colour change. After 5 minutes, the pink colour strip turns
+        into yellow colour which mean it is exposed to the UV C dosage of 100
+        mJ/cm2 where no virus can survive. Not just Corona virus, but Stera UV
+        shield kills every pathogen of any level. Click here to see the testing
+        process.
+      </div>
+    </div>
+
+    <div class="my-5">
+      <div class="faq-question">
+        Do we have to dry the objects before placing inside the shield?
+      </div>
+      <div class="faq-answer">
+        Absolutely No. We introduced the inbuilt heat coil mechanism with hot
+        air blowing inside that flows via a sponge filter during disinfection
+        kill the virus and dry out the object.
+      </div>
+    </div>
+
+    <div class="my-5">
+      <div class="faq-question">
+        Like other brands, does it also come with one operational mode?
+      </div>
+      <div class="faq-answer-header">
+        Absolutely No. Unlike others, Stera UV shield comes with a robust 5
+        operational modes.
+      </div>
+      <div class="faq-answer">a. 3-minuteUV Disinfection for Small Objects</div>
+      <div class="faq-answer">b. 5-minuteUV Disinfectionfor Medium Objects</div>
+      <div class="faq-answer">
+        c. 3-minuteUV Disinfection with Hot Air Circulation for Small Objects
+      </div>
+      <div class="faq-answer">
+        d. 5-minuteUV Disinfection with Hot Air Circulation for Medium Objects
+      </div>
+      <div class="faq-answer">
+        e. 5-minute Hot Air Circulation for Small and Medium Objects
+      </div>
+    </div>
+
+    <div class="my-5">
+      <div class="faq-question">
+        How much time does it take to disinfect the objects?
+      </div>
+      <div class="faq-answer-header">
+        UV light has three wavelength categories: UV-A, UV-B, and UV-C.
+      </div>
+      <div class="faq-answer">
+        It takes 3 minutes for small objects and 5 minutes for medium sized
+        objects.
+      </div>
+    </div>
+  </div>
+</div>
