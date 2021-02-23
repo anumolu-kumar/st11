@@ -1,0 +1,120 @@
+<div class="overflow-hidden">
+  <div class="lg:my-2">
+    <!-- svg path -->
+    <div class="absolute bg-pink-50 lg:rounded-3xl w-screen h-screen">
+      <img src="assets/main_diagonal_path.svg" class=" mx-auto h-full" alt="path" />
+    </div>
+    <!-- nav bar -->
+    <div class="relative z-10">
+      <nav class="flex flex-1 justify-between p-6 mx-auto">
+        <!-- nav -->
+        <div class="lg:mx-auto w-1/3 flex justify-start lg:justify-end">
+          <img src="assets/logo.svg" width="120" height="120" alt="stera logo" />
+        </div>
+        <div class="hidden lg:visible lg:flex justify-end w-full">
+          <div></div>
+          <div class="nav-container" style="background-color: #262626">
+            <div class="my-auto p-1 cursor-pointer" (click)="handleAboutUsClickEvent($event)">
+              About us
+            </div>
+            <div class="my-auto p-1 cursor-pointer" (click)="handleContactUsClickEvent($event)">
+              Contact us
+            </div>
+            <div class="my-auto p-1 cursor-pointer" (click)="handleBlogClick($event)">
+              Blog
+            </div>
+            <button id="nav-toggle" (click)="handleMenuClick($event)" class="flex items-center p-2">
+              <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <button id="nav-toggle" class="lg:hidden flex items-center p-1" (click)="handleMenuClick($event)">
+          <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </nav>
+
+      <!-- nav bar expanded menu -->
+      <div *ngIf="showMenu"
+        class="flex flex-col w-40 p-4 -mt-7 justify-evenly float-right text-white lg:mr-32 opacity-90 lg:opacity-100"
+        style=" background-color: #262626; height: 50vh;width: 13rem;">
+        <div class="flex flex-col">
+          <div (click)="handleProductClickEvent($event)" class="cursor-pointer">
+            Product
+          </div>
+          <div class="border-t-2 border-gray-400 w-24 mt-2"></div>
+        </div>
+
+        <div class="flex flex-col">
+          <div (click)="handleFeaturesClickEvent($event)" class="cursor-pointer">
+            Features
+          </div>
+          <div class="border-t-2 border-gray-400 w-24 mt-2"></div>
+        </div>
+
+        <div class="flex flex-col">
+          <div (click)="handleSpecificationsClickEvent($event)" class="cursor-pointer">
+            Specifications
+          </div>
+          <div class="border-t-2 border-gray-400 w-24 mt-2"></div>
+        </div>
+
+        <div class="flex flex-col">
+          <div (click)="handleUsabilityClickEvent($event)" class="cursor-pointer">
+            Usability
+          </div>
+          <div class="border-t-2 border-gray-400 w-24 mt-2"></div>
+        </div>
+
+        <div class="flex flex-col">
+          <div (click)="handleWarrantyClickEvent($event)" class="cursor-pointer">
+            Warranty and Support
+          </div>
+          <div class="border-t-2 border-gray-400 w-24 mt-2"></div>
+        </div>
+      </div>
+    </div>
+    <!-- stera main image display -->
+    <div class="flex flex-col items-center w-screen h-screen absolute">
+      <img class="straight w-96 h-96" src="assets/stera_straight.svg" alt="stera shield image" />
+      <div class="flex flex-col items-center justify-center lg:justify-evenly h-full lg:h-1/3 -mt-24 lg:-mt-0 w-screen">
+        <div class="text-2xl lg:text-4xl font-bold">Stera Shields Your World</div>
+        <div class="font-semibold text-sm lg:text-xl">
+          Eradicates Pathogen Bacteria, Fungi
+        </div>
+        <div class="font-semibold text-sm lg:text-xl">
+          and Viruses including N SARS COV-2
+        </div>
+        <div class="flex flex-col lg:flex-row lg:justify-between items-center w-11/12 mt-3">
+          <div></div>
+          <button class="w-32 p-1 rounded-full text-white bg-blue-900">
+            BUY NOW
+          </button>
+          <div class="h-10 lg:w-10 mt-20 lg:mt-0 w-full flex justify-end whatsapp">
+            <img src="assets/whatsapp.svg" class="" alt="whatsapp logo" />
+          </div>
+        </div>
+        <div style="width: 89%; height: 1px" class="bg-blue-900 mt-6 mb-10 invisible lg:visible"></div>
+      </div>
+    </div>
+    <div style="margin-top: 88vh">
+      <app-feature class="about"></app-feature>
+      <app-effecient class="features"></app-effecient>
+      <app-modes></app-modes>
+      <app-sleekest></app-sleekest>
+      <app-inner></app-inner>
+      <app-objectlist class="usability"></app-objectlist>
+      <app-purchase class="product"></app-purchase>
+      <app-youtube></app-youtube>
+      <app-press></app-press>
+      <app-instagram></app-instagram>
+      <app-footer class="contact"></app-footer>
+    </div>
+  </div>
+</div>

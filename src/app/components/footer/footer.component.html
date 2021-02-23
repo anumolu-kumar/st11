@@ -1,0 +1,56 @@
+<div class="hidden lg:visible lg:flex justify-evenly bg-black text-white rounded-t-3xl h-64 w-screen  pt-16 text-base">
+    <div class="flex flex-col">
+      <div>Contact us</div>
+      <div class="text-gray-400 mt-6 mb-3">Call us: 8088954323</div>
+      <div class="text-gray-400 my-3 mb-6">Email us: sales@steracare.com</div>
+      <div><span (click)="handleQueryClick()" class="cursor-pointer">Query </span>/ <span (click)="handleFAQClick()" class="cursor-pointer">FAQ </span></div>
+    </div>
+    <div>
+      <div class="cursor-pointer" (click)="handleAboutUsClickEvent($event)">About us</div>
+      <div class="my-6 cursor-pointer" (click)="handleProductClickEvent($event)">Product</div>
+      <div (click)="handleFeaturesClickEvent($event)" class="cursor-pointer">Features</div>
+    </div>
+    <div>
+      <div (click)="handleSpecificationsClickEvent($event)" class="cursor-pointer">Specifications</div>
+      <div class="my-6 cursor-pointer" (click)="handleWarrantyClickEvent($event)">Warranty and Support</div>
+      <div (click)="handleBlogClick($event)" class="cursor-pointer">Blog</div>
+    </div>
+    <div>
+      <div>Social Media</div>
+      <div class="flex justify-start mt-4">
+        <a href="https://www.facebook.com/"><img src="assets/facebook.svg" alt="facebook logo" class="cursor-pointer" /></a>
+        <a href="https://www.instagram.com/"><img src="assets/instagram.svg" alt="instagram logo" class="mx-4 cursor-pointer"/></a>
+        <a href="https://in.linkedin.com/"><img src="assets/linkedin.svg" alt="linkedin logo" class="cursor-pointer"/></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="lg:hidden text-white rounded-t-3xl h-full w-screen pt-16 text-base px-8 pb-4" style=" background-color: #262626">
+    <div class="lg:hidden flex justify-between">
+    <div>
+      <div class="cursor-pointer" (click)="handleAboutUsClickEvent($event)">About us</div>
+      <div class="my-6 cursor-pointer" (click)="handleProductClickEvent($event)">Product</div>
+      <div (click)="handleFeaturesClickEvent($event)" class="cursor-pointer">Features</div>
+      <div class="mt-6">Contact us</div>
+      <div class="text-gray-400 mt-2 mb-3 text-xs">Call us: 8088954323</div>
+      <div class="text-gray-400 my-3 mb-6 text-xs">Email us: sales@steracare.com</div>
+      </div>
+    <div>
+      <div (click)="handleSpecificationsClickEvent($event)" class="cursor-pointer">Specifications</div>
+      <div class="my-6 cursor-pointer" (click)="handleWarrantyClickEvent($event)">Warranty and Support</div>
+      <div (click)="handleBlogClick($event)" class="cursor-pointer">Blog</div>
+      <div></div>
+      <div></div>
+      
+    </div>
+  </div>
+  <div class="flex justify-between">
+    <div><span (click)="handleQueryClick()" class="cursor-pointer">Query </span>/ <span (click)="handleFAQClick()" class="cursor-pointer">FAQ </span></div>
+    <div class="flex justify-start">
+      <a href="https://www.facebook.com/"><img src="assets/facebook.svg" alt="facebook logo" class="cursor-pointer"/></a>
+      <a href="https://www.instagram.com/"><img src="assets/instagram.svg" alt="instagram logo" class="mx-5 cursor-pointer"/></a>
+      <a href="https://in.linkedin.com/"><img src="assets/linkedin.svg" alt="linkedin logo" class="cursor-pointer"/></a>
+    </div>
+  </div>
+  </div>
+  

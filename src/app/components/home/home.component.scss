@@ -1,0 +1,16 @@
+.nav-item{
+    @apply my-auto;
+    @apply p-1;
+    @apply cursor-pointer;
+}
+
+.nav-container{
+    @apply text-white;
+    @apply rounded-full;
+    @apply w-2/5;
+    @apply flex;
+    @apply justify-between;
+    @apply px-8;
+    @apply text-sm;
+    @apply mr-16
+}
